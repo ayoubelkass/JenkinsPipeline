@@ -21,6 +21,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
+        input(message: 'would you like to continue ? ', id: 'ok')
         echo 'Deploying the APP'
       }
     }
