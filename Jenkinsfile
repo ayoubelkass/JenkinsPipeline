@@ -5,13 +5,14 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            echo 'hello world ..!'
+            echo 'Building the APP'
           }
         }
 
         stage('Test') {
           steps {
             echo 'Testing the application'
+            echo '"Get the Path ${ChromeDriverPath}"'
           }
         }
 
@@ -24,5 +25,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    ChromeDriverPath = 'Documents'
   }
 }
